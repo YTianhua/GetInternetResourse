@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hz_bg"
+    tools:context=".MainActivity">
+       <!-- <WebView
+            android:id="@+id/mWebView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </WebView>-->
+        <!--使用jsoup获取网络资源-->
+        <!--无法在子线程中添加listview，尝试使用recyclerview-->
+       <!-- <ListView
+            android:id="@+id/mListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>-->
+
+
+       <!--因为recyclerview是执行子线程后再添加，所以需要手动刷新，否则无法显示-->
+       <android.support.v4.widget.SwipeRefreshLayout
+           android:id="@+id/swipeRefresh_layout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+       <android.support.v7.widget.RecyclerView
+           android:id="@+id/recycler_view"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </android.support.v7.widget.RecyclerView>
+       </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>
